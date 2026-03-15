@@ -48,7 +48,7 @@ Future Improvements
 - Voice input
 - Translation history
 
-<<<<<<< HEAD
+  
  📸 Screenshot
 
 ![Language Translator](./screenshots/lang.png)
