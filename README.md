@@ -23,4 +23,9 @@ Future Improvements
 - Voice input
 - Translation history
 
+
+Screenshots
+![Language Translator](./screenshots/lang.png)
+  
+
 ⭐ Star this repo if you like it!
