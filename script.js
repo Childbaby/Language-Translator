@@ -1,6 +1,6 @@
 // script.js - WITH DEBOUNCE AND DARK MODE
 
-// ========== GET ALL ELEMENTS ==========
+//GET ALL ELEMENTS
 const sourceSelect = document.getElementById('source-lang');
 const targetSelect = document.getElementById('target-lang');
 const swapBtn = document.getElementById('swap-btn');
@@ -14,12 +14,11 @@ const speakTranslated = document.getElementById('speak-translated');
 const copyTranslated = document.getElementById('copy-translated');
 const darkModeBtn = document.getElementById('dark-mode-btn');
 
-// ========== VARIABLES ==========
+//VARIABLES
 let translatedText = '';
 let debounceTimer;
 
-// ========== FUNCTIONS ==========
-
+//Functions
 // Update character count
 function updateCharCount() {
     charCount.textContent = userInput.value.length;
@@ -116,7 +115,7 @@ function speakText(text, lang) {
     window.speechSynthesis.speak(utterance);
 }
 
-// ========== EVENT LISTENERS ==========
+//EVENT LISTENERS 
 
 window.addEventListener('load', function() {
     updateCharCount();
