@@ -29,5 +29,8 @@ A web-based language translator built with vanilla JavaScript.
 - Voice input
 - Translation history
 
+## 📸 Screenshot
+
+![Language Translator](./screenshots/lang.png)
 ---
 ⭐ Star this repo if you like it!
