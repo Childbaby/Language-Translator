@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="translator-card">
+            <h1>🌐 Language Translator</h1>
+            
+            <!-- Dark Mode Toggle Button -->
+            <div class="dark-mode-toggle">
+                <button id="dark-mode-btn" class="dark-mode-btn">🌙 Dark Mode</button>
+            </div>
+            
+            <!-- Language Selection Row -->
+            <div class="language-row">
+                <div class="language-box">
+                    <label>From:</label>
+                    <select id="source-lang">
+                        <option value="en" selected>English</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+                
+                <!-- Swap Button -->
+                <button id="swap-btn" class="swap-btn">⇄</button>
+                
+                <div class="language-box">
+                    <label>To:</label>
+                    <select id="target-lang">
+                        <option value="en">English</option>
+                        <option value="fr" selected>French</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Input Section -->
+            <div class="input-section">
+                <textarea 
+                    id="user-input" 
+                    placeholder="Enter text to translate..." 
+                    maxlength="500"
+                >Hello, how are you</textarea>
+                <div class="char-counter">
+                    <span id="char-count">22</span>/500
+                </div>
+            </div>
+            
+            <!-- Translate Button -->
+            <button id="translate-btn" class="translate-btn">Translate</button>
+            
+            <!-- Output Section -->
+            <div class="output-section">
+                <div id="output" class="output-box">
+                    <!-- Translated text will appear here -->
+                </div>
+            </div>
+            
+            <!-- Action Buttons Row -->
+            <div class="actions-row">
+                <!-- Original Text Actions -->
+                <div class="action-group">
+                    <span class="action-label">Original:</span>
+                    <button id="speak-original" class="action-btn">🔊</button>
+                    <button id="copy-original" class="action-btn">📋</button>
+                </div>
+                
+                <!-- Translated Text Actions -->
+                <div class="action-group">
+                    <span class="action-label">Translated:</span>
+                    <button id="speak-translated" class="action-btn">🔊</button>
+                    <button id="copy-translated" class="action-btn">📋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
