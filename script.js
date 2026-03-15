@@ -1,5 +1,8 @@
 // script.js - WITH DEBOUNCE AND DARK MODE
 
+
+//GET ALL ELEMENTS
+
 //GET ALL ELEMENTS
 const sourceSelect = document.getElementById('source-lang');
 const targetSelect = document.getElementById('target-lang');
@@ -18,7 +21,8 @@ const darkModeBtn = document.getElementById('dark-mode-btn');
 let translatedText = '';
 let debounceTimer;
 
-//Functions
+
+//FUNCTIONS
 // Update character count
 function updateCharCount() {
     charCount.textContent = userInput.value.length;
@@ -27,32 +31,32 @@ function updateCharCount() {
 // Translate function
 function translateText() {
     let text = userInput.value;
-    
+
     if(text === '') {
         alert('Please enter text to translate');
         return;
     }
-    
+
     let sourceLang = sourceSelect.value;
     let targetLang = targetSelect.value;
-    
+
     // Check if same language
     if(sourceLang === targetLang) {
         outputDiv.textContent = 'Please select different languages';
         return;
     }
-    
+
     // Build URL
     let encodedText = encodeURIComponent(text);
     let url = `https://api.mymemory.translated.net/get?q=${encodedText}&langpair=${sourceLang}|${targetLang}`;
-    
+
     outputDiv.textContent = 'Translating...';
-    
+
     fetch(url)
         .then(response => response.json())
         .then(data => {
             console.log('API Response:', data);
-            
+
             if(data.responseData && data.responseData.translatedText) {
                 translatedText = data.responseData.translatedText;
                 outputDiv.textContent = translatedText;
@@ -70,7 +74,7 @@ function translateText() {
 function debouncedTranslate() {
     // Clear the previous timer
     clearTimeout(debounceTimer);
-    
+
     // Set a new timer
     debounceTimer = setTimeout(() => {
         // Only translate if there's text
@@ -84,10 +88,10 @@ function debouncedTranslate() {
 function swapLanguages() {
     let tempSource = sourceSelect.value;
     let tempTarget = targetSelect.value;
-    
+
     sourceSelect.value = tempTarget;
     targetSelect.value = tempSource;
-    
+
     if(userInput.value !== '') {
         translateText();
     }
@@ -103,19 +107,19 @@ function copyToClipboard(text) {
 // Speak text
 function speakText(text, lang) {
     window.speechSynthesis.cancel();
-    
+
     let utterance = new SpeechSynthesisUtterance(text);
-    
+
     if(lang === 'en') {
         utterance.lang = 'en-US';
     } else if(lang === 'fr') {
         utterance.lang = 'fr-FR';
     }
-    
+
     window.speechSynthesis.speak(utterance);
 }
 
-//EVENT LISTENERS 
+//EVENT LISTENERS
 
 window.addEventListener('load', function() {
     updateCharCount();
@@ -167,7 +171,7 @@ speakTranslated.addEventListener('click', function() {
 // Dark Mode Toggle
 darkModeBtn.addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
-    
+
     // Change button text based on mode
     if(document.body.classList.contains('dark-mode')) {
         darkModeBtn.textContent = '☀️ Light Mode';
