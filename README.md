@@ -23,8 +23,6 @@ What I Learned
 - JavaScript objects for dictionaries
 - CSS styling
 
- Future Improvements
-
 Future Improvements
 - Add more languages
 - Voice input
